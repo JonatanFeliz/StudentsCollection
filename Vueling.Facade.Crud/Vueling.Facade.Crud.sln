@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vueling.Facade.Crud", "Vueling.Facade.Crud.csproj", "{5E0CE0DA-AE7C-4189-B39C-0BFB632A1937}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E0CE0DA-AE7C-4189-B39C-0BFB632A1937}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E0CE0DA-AE7C-4189-B39C-0BFB632A1937}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E0CE0DA-AE7C-4189-B39C-0BFB632A1937}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E0CE0DA-AE7C-4189-B39C-0BFB632A1937}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C10A388C-5308-40C6-9E1D-A0EA83DEFB47}
+	EndGlobalSection
+EndGlobal
