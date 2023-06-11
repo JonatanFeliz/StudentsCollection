@@ -20,6 +20,9 @@ namespace Vueling.Facade.Crud
         [OperationContract]
         List<StudentDto> GetStudents();
 
+        [OperationContract]
+        StudentDto InsertStudents(StudentDto student);
+
     }
 
 }

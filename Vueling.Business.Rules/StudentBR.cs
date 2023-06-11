@@ -16,5 +16,27 @@ namespace Vueling.Business.Rules
 
             return studentRepository.GetStudentsFromDB();
         }
+
+        public StudentDto CreateStudentValidation(StudentDto student)
+        {
+            if (StudentValidation(student))
+            {
+                StudentRepository studentRepository = new StudentRepository();
+
+                return studentRepository.CreateStudentInDB(student);
+            }
+
+            return null;
+        }
+
+        public bool StudentValidation(StudentDto student)
+        {
+            if (string.IsNullOrWhiteSpace(student.Name) && string.IsNullOrWhiteSpace(student.Surname))
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }
