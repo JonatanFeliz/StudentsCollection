@@ -12,12 +12,6 @@ namespace Vueling.Facade.Crud
     public interface IService1
     {
         [OperationContract]
-        string GetData(int value);
-
-        [OperationContract]
-        StudentDto GetDataUsingDataContract(StudentDto composite);
-
-        [OperationContract]
         List<StudentDto> GetStudents();
 
         [OperationContract]
