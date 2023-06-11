@@ -51,7 +51,7 @@ namespace Vueling.Infrastructure.Repository
         {
             var sql = $"UPDATE Student SET Name = '{student.Name}', Surname = '{student.Surname}' WHERE Id = {student.Id};";
 
-            return ExecuteSQLQuery(student, sql, connectionString);
+            return ExecuteSQLQuery(student, sql, connectionString); 
         }
 
         public StudentDto ExecuteSQLQuery(StudentDto student, string sql, string connectionString)
