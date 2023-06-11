@@ -42,11 +42,23 @@ namespace Vueling.Infrastructure.Repository
 
         public StudentDto Create(StudentDto student, string connectionString)
         {
+            var sql = $"INSERT INTO Student (name,surname) VALUES ('{student.Name}','{student.Surname}');";
+
+            return ExecuteSQLQuery(student, sql, connectionString);
+        }
+
+        public StudentDto Update(StudentDto student, string connectionString)
+        {
+            var sql = $"UPDATE Student SET Name = '{student.Name}', Surname = '{student.Surname}' WHERE Id = {student.Id};";
+
+            return ExecuteSQLQuery(student, sql, connectionString);
+        }
+
+        public StudentDto ExecuteSQLQuery(StudentDto student, string sql, string connectionString)
+        {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-
-                var sql = $"INSERT INTO Student (name,surname) VALUES ('{student.Name}','{student.Surname}');";
 
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
