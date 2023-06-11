@@ -8,7 +8,7 @@ using Vueling.CrossCutting.Utilities.Models;
 
 namespace Vueling.Infrastructure.Repository
 {
-    internal class CrudMethods
+    public class CrudMethods
     {
         public List<StudentDto> Read(string connectionString)
         {
@@ -18,7 +18,9 @@ namespace Vueling.Infrastructure.Repository
             {
                 connection.Open();
 
-                using (SqlCommand command = new SqlCommand("SELECT * FROM Student", connection))
+                var sql = "SELECT * FROM Student";
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
                 {
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -36,6 +38,23 @@ namespace Vueling.Infrastructure.Repository
             }
 
             return students;
+        }
+
+        public StudentDto Create(StudentDto student, string connectionString)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                var sql = $"INSERT INTO Student (name,surname) VALUES ('{student.Name}','{student.Surname}');";
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+
+                return student;
+            }
         }
     }
 }

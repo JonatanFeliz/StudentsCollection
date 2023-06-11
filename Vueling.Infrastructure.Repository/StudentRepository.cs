@@ -17,5 +17,12 @@ namespace Vueling.Infrastructure.Repository
 
             return crud.Read(connectionString);
         }
+
+        public StudentDto CreateStudentInDB(StudentDto student)
+        {
+            CrudMethods crud = new CrudMethods();
+
+            return crud.Create(student,connectionString);
+        }
     }
 }
