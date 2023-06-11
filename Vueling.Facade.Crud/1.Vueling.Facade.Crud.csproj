@@ -51,6 +51,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Vueling.Business.Rules\2.Vueling.Business.Rules.csproj">
+      <Project>{80097788-a660-4975-8f7e-b2089bc5bbc3}</Project>
+      <Name>2.Vueling.Business.Rules</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vueling.CrossCutting.Utilities\Vueling.CrossCutting.Utilities.csproj">
+      <Project>{630d5666-5195-45c7-acbf-9e6dd81842a0}</Project>
+      <Name>Vueling.CrossCutting.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <VSToolsPath Condition="'$(VSToolsPath)' == '' and '$(VisualStudioVersion)' != '' and '$(VisualStudioVersion)' != '11.0'">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
