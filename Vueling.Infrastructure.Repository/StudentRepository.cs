@@ -22,14 +22,27 @@ namespace Vueling.Infrastructure.Repository
         {
             CrudMethods crud = new CrudMethods();
 
-            return crud.Create(student,connectionString);
+            var sql = $"INSERT INTO Student (name,surname) VALUES ('{student.Name}','{student.Surname}');";
+
+            return crud.ExecuteSQLQuery(student, sql, connectionString);
         }
 
         public StudentDto UpdateStudentInDB(StudentDto student)
         {
             CrudMethods crud = new CrudMethods();
 
-            return crud.Update(student, connectionString);
+            var sql = $"UPDATE Student SET Name = '{student.Name}', Surname = '{student.Surname}' WHERE Id = {student.Id};";
+
+            return crud.ExecuteSQLQuery(student, sql, connectionString);
+        }
+
+        public StudentDto DeleteStudentInDB(StudentDto student)
+        {
+            CrudMethods crud = new CrudMethods();
+
+            var sql = $"DELETE FROM Student WHERE Id = {student.Id};";
+
+            return crud.ExecuteSQLQuery(student, sql, connectionString);
         }
     }
 }
