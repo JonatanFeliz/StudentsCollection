@@ -4,10 +4,11 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using Vueling.Business.Rules;
+using Vueling.CrossCutting.Utilities.Models;
 
 namespace Vueling.Facade.Crud
 {
-    // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código y en el archivo de configuración a la vez.
     public class Service1 : IService1
     {
         public string GetData(int value)
@@ -15,17 +16,26 @@ namespace Vueling.Facade.Crud
             return string.Format("You entered: {0}", value);
         }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        public StudentDto GetDataUsingDataContract(StudentDto composite)
         {
             if (composite == null)
             {
                 throw new ArgumentNullException("composite");
             }
-            if (composite.BoolValue)
+            if (composite.Name == "Jonatan")
             {
-                composite.StringValue += "Suffix";
+                composite.Surname += "eliz";
             }
             return composite;
+        }
+
+        public List<StudentDto> GetStudents()
+        {
+            StudentBR studentBR = new StudentBR();
+
+            var students = studentBR.GetStudentsBR();
+
+            return students;
         }
     }
 }
