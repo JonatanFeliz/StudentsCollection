@@ -49,5 +49,12 @@ namespace Vueling.Facade.Crud
 
             return studentBR.UpdateStudentValidation(student);
         }
+
+        public StudentDto DeleteStudents(StudentDto student)
+        {
+            StudentBR studentBR = new StudentBR();
+
+            return studentBR.DeleteStudentValidation(student);
+        }
     }
 }

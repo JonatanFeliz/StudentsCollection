@@ -41,6 +41,13 @@ namespace Vueling.Business.Rules
             return null;
         }
 
+        public StudentDto DeleteStudentValidation(StudentDto student)
+        {
+            StudentRepository studentRepository = new StudentRepository();
+
+            return studentRepository.DeleteStudentInDB(student);
+        }
+
         public bool StudentValidation(StudentDto student)
         {
             if (string.IsNullOrWhiteSpace(student.Name) && string.IsNullOrWhiteSpace(student.Surname))
