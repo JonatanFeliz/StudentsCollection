@@ -13,30 +13,63 @@ namespace Vueling.Facade.Crud
     {
         public List<StudentDto> GetStudents()
         {
-            StudentBR studentBR = new StudentBR();
+            try
+            {
+                StudentBR studentBR = new StudentBR();
 
-            return studentBR.GetStudentsBR();
+                return studentBR.GetStudentsBR();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+            
         }
 
         public StudentDto InsertStudents(StudentDto student)
         {
-            StudentBR studentBR = new StudentBR();
+            try
+            {
+                StudentBR studentBR = new StudentBR();
 
-            return studentBR.CreateStudentValidation(student);
+                return studentBR.CreateStudentValidation(student);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
         }
 
         public StudentDto UpdateStudents(StudentDto student)
         {
-            StudentBR studentBR = new StudentBR();
+            try
+            {
+                StudentBR studentBR = new StudentBR();
 
-            return studentBR.UpdateStudentValidation(student);
+                return studentBR.UpdateStudentValidation(student);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
         }
 
         public StudentDto DeleteStudents(StudentDto student)
         {
-            StudentBR studentBR = new StudentBR();
+            try
+            {
+                StudentBR studentBR = new StudentBR();
 
-            return studentBR.DeleteStudentValidation(student);
+                return studentBR.DeleteStudentValidation(student);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
         }
     }
 }
