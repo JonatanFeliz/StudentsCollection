@@ -25,11 +25,5 @@ namespace Vueling.CrossCutting.Utilities.Models
             Name = name;
             Surname = surname;
         }
-
-        public StudentDto(string name, string surname)
-        {
-            Name = name;
-            Surname = surname;
-        }
     }
 }

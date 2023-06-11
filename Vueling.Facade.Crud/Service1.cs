@@ -11,24 +11,6 @@ namespace Vueling.Facade.Crud
 {
     public class Service1 : IService1
     {
-        public string GetData(int value)
-        {
-            return string.Format("You entered: {0}", value);
-        }
-
-        public StudentDto GetDataUsingDataContract(StudentDto composite)
-        {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.Name == "Jonatan")
-            {
-                composite.Surname += "eliz";
-            }
-            return composite;
-        }
-
         public List<StudentDto> GetStudents()
         {
             StudentBR studentBR = new StudentBR();
